@@ -12,7 +12,7 @@ const port = 5004
 const SERVICE_NAME = "Shop";
 
 // Endpoints
-const GET_FAV_URL = "http://favorites:5002/fav/";
+const GET_FAV_URL = "http://favorites:5002/favorites/";
 const MONITORING_URL = "http://monitoring:5005/log";
 
 var promisePool;
@@ -40,7 +40,7 @@ app.post('/shop/:guid', jsonParser, async function (req, res) {
 
     postAsyncLog(`Emptyed the favorites and shopped the items for guid: ${req.params.guid}`)
 
-    res.send("")
+    res.send("Shopping cart updated!")
 })
 
 app.get('/shop/:guid', jsonParser, async function (req, res) {
